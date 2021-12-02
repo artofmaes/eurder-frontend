@@ -1,1 +1,6 @@
-<p>items-detail works!</p>
+<div *ngIf="item">
+
+  <h2>{{item.name | uppercase}}</h2>
+  <div><span>${{item.price}}</span></div>
+  <button (click)="goBack()">go back</button>
+</div>

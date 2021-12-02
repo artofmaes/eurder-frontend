@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Item} from "../../item/Item";
+import {ActivatedRoute} from "@angular/router";
+import {ItemService} from "../../service/itemService/item.service";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-items-detail',
@@ -7,9 +11,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemsDetailComponent implements OnInit {
 
-  constructor() { }
+  @Input() item?: Item;
+
+  constructor(private route: ActivatedRoute,
+              private itemService: ItemService,
+              private location: Location) { }
 
   ngOnInit(): void {
+    this.getItem();
   }
 
+  getItem(): void{
+    const id = this.route.snapshot.paramMap.get('id');
+    this.itemService.getItem(id).subscribe(item => this.item = item);
+  }
+
+  save(): void {
+    if(this.item){
+      this.itemService.updateItem(this.item).subscribe(()=> this.goBack())
+    }
+  }
+
+  goBack() {
+    this.location.back();
+  }
 }
