@@ -1,1 +1,8 @@
-<p>items works!</p>
+<h2>Itemlist</h2>
+<ul>
+  <li *ngFor="let item of items">
+    <a routerLink="/detail/{{item.id}}">
+      {{item.name}}
+    </a>
+  </li>
+</ul>
