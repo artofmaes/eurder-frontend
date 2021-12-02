@@ -4,6 +4,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
 import {RouterModule} from "@angular/router";
+import { ItemsComponent } from './items/items.component';
+import { ItemsDetailComponent } from './items-detail/items-detail.component';
+import { ItemSearchComponent } from './item-search/item-search.component';
 
 
 
@@ -11,7 +14,10 @@ import {RouterModule} from "@angular/router";
   declarations: [
     HeaderComponent,
     FooterComponent,
-    LayoutComponent
+    LayoutComponent,
+    ItemsComponent,
+    ItemsDetailComponent,
+    ItemSearchComponent
   ],
   exports: [
     LayoutComponent
