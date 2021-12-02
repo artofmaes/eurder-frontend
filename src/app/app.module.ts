@@ -8,6 +8,7 @@ import {ItemsComponent} from "./layout/items/items.component";
 import {ItemsDetailComponent} from "./layout/items-detail/items-detail.component";
 import {ItemSearchComponent} from "./layout/item-search/item-search.component";
 import {HttpClientModule} from "@angular/common/http";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     LayoutModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

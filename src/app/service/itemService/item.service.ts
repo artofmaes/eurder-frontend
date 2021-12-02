@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, of, tap} from "rxjs";
 import {Item} from "../../item/Item";
 import {environment} from "../../../environments/environment";
 
@@ -26,5 +26,13 @@ export class ItemService {
 
   updateItem(item: Item): Observable<any> {
     return this.http.put(this.itemsUrl, item, this.httpOptions);
+  }
+
+  searchItems(term: string): Observable<Item[]>{
+    if(!term.trim()){
+      return of([]);
+    }
+    return this.http.get<Item[]>(`${this.itemsUrl}/?name=${term}`);
+
   }
 }

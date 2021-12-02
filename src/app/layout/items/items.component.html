@@ -1,9 +1,14 @@
-<h2>Itemlist</h2>
-<ul>
-  <li *ngFor="let item of items">
-    <a routerLink="/detail/{{item.id}}">
-      {{item.name}}
-    </a>
-    <p>{{item.description}} ${{item.price}} {{item.stockUrgency}}</p>
-  </li>
-</ul>
+<section class="jasmine-description">
+  <div>
+    <h2>Items</h2>
+    <app-item-search></app-item-search>
+  </div>
+  <div *ngFor="let item of items" class="col-md-4">
+    <h2>{{item.name}}</h2>
+    <img src="assets/images/img-placeholder.png" alt="">
+    <h3>${{item.price}}  <img src="assets/images/{{item.stockUrgency}}.png" alt="{{item.stockUrgency}}"/></h3>
+
+    <button routerLink="items/detail/{{item.id}}" class="btn-primary">More info</button>
+    <br> <br> <br> <br>
+  </div>
+</section>
