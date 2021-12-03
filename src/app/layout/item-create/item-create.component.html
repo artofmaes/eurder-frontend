@@ -1,6 +1,6 @@
 <div class="col-md-6 big-dialog">
   <h2>Create Item</h2>
-  <form [formGroup]="createItem" >
+  <form [formGroup]="createItem" (ngSubmit)="addItem()">
     <div>
       <label for="name">Item Name:</label>
       <input id="name" formControlName="name" #itemName class="form-control">
@@ -17,8 +17,9 @@
       <label for="stock">Amount in Stock:</label>
       <input id="stock" formControlName="amountOfStock" #itemAmount  class="form-control">
     </div>
-  </form>
+
   <br><br>
-  <button (click)="addItem(itemName.value, itemPrice.valueAsNumber, itemDescription.value, itemAmount.valueAsNumber)" class="btn btn-primary pull-right">Add Item</button>
+  <button type="submit" class="btn btn-primary pull-right">Add Item</button>
   <button (click)="goBack()" class="btn btn-default">Go back</button>
+  </form>
 </div>

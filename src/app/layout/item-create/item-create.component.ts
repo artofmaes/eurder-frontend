@@ -12,7 +12,7 @@ import {Location} from "@angular/common";
 })
 export class ItemCreateComponent implements OnInit {
 
-  items: Array<Item> = [];
+  items: Array<CreateItem> = [];
   createItem = this.formBuilder.group({
     name:'',
     price:'',
@@ -26,13 +26,8 @@ export class ItemCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addItem(name: string, price: number, description: string, amountOfStock: number) {
-    name= name.trim();
-    description = description.trim();
-    if (!name || !price || !description || !amountOfStock){
-      return;
-    }
-    this.itemService.addItem({name, price, description, amountOfStock} as CreateItem )
+  addItem() {
+    this.itemService.addItem(this.createItem.value)
       .subscribe(item => {this.items.push(item); this.goBack(); })
   }
 
