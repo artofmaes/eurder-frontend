@@ -1,15 +1,17 @@
-<section class="">
+<section>
   <div class="subbar">
     <h2>Items</h2>
     <app-item-search></app-item-search>
     <button class="btn btn-success" routerLink="create">Create New Item</button>
   </div>
-  <div *ngFor="let item of items" class="col-md-4 big-dialog text-center">
-    <h2>{{item.name}}</h2>
-    <img src="assets/images/img-placeholder.png" alt="{{item.name}}">
-    <h3>${{item.price}}  <img src="assets/images/{{item.stockUrgency}}.png" alt="{{item.stockUrgency}}"></h3>
+  <div class="container col-md-10">
+    <div *ngFor="let item of items" class="col-md-3 big-dialog text-center">
+      <h2>{{item.name}}</h2>
+      <img src="assets/images/img-placeholder.png" alt="{{item.name}}" class="col-lg-12">
+      <h3>${{item.price}}  <img src="assets/images/{{item.stockUrgency}}.png" alt="{{item.stockUrgency}}"></h3>
 
-    <button routerLink="detail/{{item.id}}" class="btn btn-primary">More info</button>
-    <br> <br> <br> <br>
+      <button routerLink="detail/{{item.id}}" class="btn btn-primary">More info</button>
+      <br> <br> <br> <br>
+    </div>
   </div>
 </section>
