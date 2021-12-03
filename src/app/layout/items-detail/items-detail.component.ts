@@ -26,12 +26,6 @@ export class ItemsDetailComponent implements OnInit {
     this.itemService.getItem(id).subscribe(item => this.item = item);
   }
 
-  save(): void {
-    if(this.item){
-      this.itemService.updateItem(this.item).subscribe(()=> this.goBack())
-    }
-  }
-
   goBack() {
     this.location.back();
   }

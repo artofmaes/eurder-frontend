@@ -9,13 +9,16 @@ import {ItemsDetailComponent} from "./layout/items-detail/items-detail.component
 import {ItemSearchComponent} from "./layout/item-search/item-search.component";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
+import { ItemEditComponent } from './layout/item-edit/item-edit.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemsComponent,
     ItemsDetailComponent,
-    ItemSearchComponent
+    ItemSearchComponent,
+    ItemEditComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,9 @@ import {RouterModule} from "@angular/router";
     LayoutModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
