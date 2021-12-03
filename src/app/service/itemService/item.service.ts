@@ -10,7 +10,7 @@ import {environment} from "../../../environments/environment";
 export class ItemService {
 
   httpOptions = {
-    headers: new HttpHeaders({'Content-Type':'application'})
+    headers: new HttpHeaders({'Content-Type':'application/json'})
   }
   private itemsUrl= `${environment.backendUrl}/items`;
   constructor(private http: HttpClient) { }
@@ -25,7 +25,8 @@ export class ItemService {
   }
 
   updateItem(item: Item): Observable<any> {
-    return this.http.put(this.itemsUrl, item, this.httpOptions);
+    const url = `${this.itemsUrl}/${item.id}`;
+    return this.http.put(url, item, this.httpOptions);
   }
 
   searchItems(term: string): Observable<Item[]>{

@@ -1,14 +1,14 @@
-<section class="jasmine-description">
+<section class="">
   <div>
-    <h2>Items</h2>
-    <app-item-search></app-item-search>
+    <h2>Items <app-item-search></app-item-search></h2>
+
   </div>
-  <div *ngFor="let item of items" class="col-md-4">
+  <div *ngFor="let item of items" class="col-md-4 big-dialog">
     <h2>{{item.name}}</h2>
     <img src="assets/images/img-placeholder.png" alt="">
-    <h3>${{item.price}}  <img src="assets/images/{{item.stockUrgency}}.png" alt="{{item.stockUrgency}}"/></h3>
+    <h3>${{item.price}}  <img src="assets/images/{{item.stockUrgency}}.png" alt="{{item.stockUrgency}}"></h3>
 
-    <button routerLink="detail/{{item.id}}" class="btn-primary">More info</button>
+    <button routerLink="detail/{{item.id}}" class="btn btn-primary">More info</button>
     <br> <br> <br> <br>
   </div>
 </section>
