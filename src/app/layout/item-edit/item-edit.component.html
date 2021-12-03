@@ -1,0 +1,26 @@
+<div *ngIf="item" class="col-md-6 big-dialog">
+  <h2>ITEM - {{item.id}}</h2>
+  <hr>
+  <h3>{{item.name | uppercase}}</h3>
+  <form [formGroup]="updateItemForm">
+    <div>
+      <label for="name">Item Name:</label>
+      <input id="name" formControlName="name" [(ngModel)]="item.name" placeholder="{{item.name}}" class="form-control">
+    </div>
+    <div>
+      <label for="price">Item Price:</label>
+      <input id="price" formControlName="price" [(ngModel)]="item.price" placeholder="{{item.price}}" class="form-control">
+    </div>
+    <div>
+      <label for="description">Item Price:</label>
+      <input id="description" formControlName="description" [(ngModel)]="item.description" placeholder="{{item.description}}" class="form-control">
+    </div>
+    <div>
+      <label for="stock">Item Price:</label>
+      <input id="stock" formControlName="amountOfStock" [(ngModel)]="item.amountOfStock" placeholder="{{item.amountOfStock}}" class="form-control">
+    </div>
+  </form>
+  <br><br>
+  <button (click)="save()" class="btn btn-primary pull-right">Save</button>
+  <button (click)="goBack()" class="btn btn-default">Go back</button>
+</div>
