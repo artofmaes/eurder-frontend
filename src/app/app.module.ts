@@ -11,6 +11,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
 import { ItemEditComponent } from './layout/item-edit/item-edit.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ItemCreateComponent } from './layout/item-create/item-create.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ItemsComponent,
     ItemsDetailComponent,
     ItemSearchComponent,
-    ItemEditComponent
+    ItemEditComponent,
+    ItemCreateComponent
   ],
   imports: [
     BrowserModule,

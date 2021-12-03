@@ -4,19 +4,19 @@
   <h3>{{item.name | uppercase}}</h3>
   <form [formGroup]="updateItemForm">
     <div>
-      <label for="name">Item Name:</label>
+      <label for="name">Name:</label>
       <input id="name" formControlName="name" [(ngModel)]="item.name" placeholder="{{item.name}}" class="form-control">
     </div>
     <div>
-      <label for="price">Item Price:</label>
+      <label for="price">Price:</label>
       <input id="price" formControlName="price" [(ngModel)]="item.price" placeholder="{{item.price}}" class="form-control">
     </div>
     <div>
-      <label for="description">Item Price:</label>
+      <label for="description">Description:</label>
       <input id="description" formControlName="description" [(ngModel)]="item.description" placeholder="{{item.description}}" class="form-control">
     </div>
     <div>
-      <label for="stock">Item Price:</label>
+      <label for="stock">Stock Amount:</label>
       <input id="stock" formControlName="amountOfStock" [(ngModel)]="item.amountOfStock" placeholder="{{item.amountOfStock}}" class="form-control">
     </div>
   </form>
