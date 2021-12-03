@@ -33,7 +33,7 @@ export class ItemCreateComponent implements OnInit {
       return;
     }
     this.itemService.addItem({name, price, description, amountOfStock} as CreateItem )
-      .subscribe(item => {this.items.push(item); })
+      .subscribe(item => {this.items.push(item); this.goBack(); })
   }
 
   goBack() {
