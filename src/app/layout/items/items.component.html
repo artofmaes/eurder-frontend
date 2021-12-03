@@ -3,9 +3,9 @@
     <h2>Items <app-item-search></app-item-search></h2>
 
   </div>
-  <div *ngFor="let item of items" class="col-md-4 big-dialog">
+  <div *ngFor="let item of items" class="col-md-4 big-dialog text-center">
     <h2>{{item.name}}</h2>
-    <img src="assets/images/img-placeholder.png" alt="">
+    <img src="assets/images/img-placeholder.png" alt="{{item.name}}">
     <h3>${{item.price}}  <img src="assets/images/{{item.stockUrgency}}.png" alt="{{item.stockUrgency}}"></h3>
 
     <button routerLink="detail/{{item.id}}" class="btn btn-primary">More info</button>
